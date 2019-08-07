@@ -225,6 +225,10 @@
     <Compile Include="Migrations\201908061836300_initialmirgration.Designer.cs">
       <DependentUpon>201908061836300_initialmirgration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201908071937420_Seed.cs" />
+    <Compile Include="Migrations\201908071937420_Seed.Designer.cs">
+      <DependentUpon>201908071937420_Seed.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -290,6 +294,11 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Movies\Create.cshtml" />
+    <Content Include="Views\Movies\Delete.cshtml" />
+    <Content Include="Views\Movies\Details.cshtml" />
+    <Content Include="Views\Movies\Edit.cshtml" />
+    <Content Include="Views\Movies\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -327,6 +336,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201908061836300_initialmirgration.resx">
       <DependentUpon>201908061836300_initialmirgration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908071937420_Seed.resx">
+      <DependentUpon>201908071937420_Seed.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

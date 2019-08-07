@@ -1,57 +1,73 @@
-﻿using MediaBrowser.Controller.Entities.Movies;
-using MovieLibrary.Models;
+﻿using MovieLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
-using System.Web.Mvc;
-using Movie = MovieLibrary.Models.Movie;
+
+
 
 namespace MovieLibrary.Controllers
 {
     public class MovieController : ApiController
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private ApplicationDbContext db;
 
-            // GET api/values
-            ApplicationDbContext context;
-            public MovieController()
-            {
-                context = new ApplicationDbContext();
-            }
-            public IEnumerable<string> Get()
-            {
-                // Retrieve all movies from db logic
-                
-                return new string[] { "movie1 string", "movie2 string" };
-            }
-
-            // GET api/values/5
-            public string Get(int id)
-            {
-            // Retrieve movie by id from db logic
+        // GET api/values
+        public MovieController()
+        {
             db = new ApplicationDbContext();
-            Movie movie = new Movie();
-                return "value";
-            }
-
-            // POST api/values
-            public void Post([FromBody]Movie value)
-            {
-                // Create movie in db logic
-            }
-
-            // PUT api/values/5
-            public void Put(int id, [FromBody]string value)
-            {
-                // Update movie in db logic
-            }
-
-            // DELETE api/values/5
-            public void Delete(int id)
-            {
-                // Delete movie from db logic
-            }
         }
+        public IEnumerable<Movie> Get()
+        {
+            // Retrieve all movies from db logic
+
+            return db.Movies.ToList();
+        }
+
+        // GET api/values/5
+        public string Get(int id)
+        {
+            // Retrieve movie by id from db logic
+            Movie moviesToUpdate = db.Movies.Where(s => s.Id == id).Single();
+            return "Movie";
+        }
+        // POST api/values
+        public void Post([FromBody]Movie value)
+        {
+            // Create movie in db logic
+            db.Movies.Add(value);
+            db.SaveChanges();
+         
+        }
+
+        // PUT api/values/5
+        public void Put(int id, [FromBody]string value)
+        {
+            // Update movie in db logic
+            var MoviesInDB = _db.Movies.Single(m => m.Id == MovieInDB.Id);
+            MoviesInDB.MovieId = MoviesInDB;
+            MoviesInDB.Title = MoviesInDB;
+            MoviesInDB.Genre = MoviesInDB;
+            MoviesInDB.DirectorId = db.Movies.ToList();
+            MoviesInDB.Id = db.Movies.ToList();
+            db.SaveChanges();
+            return MoviesInDB("Index", "Players");
+
+
+        }
+
+        //DELETE api/values/5
+        //public void Delete(int id)
+        //{
+        //    // Delete movie from db logic
+        //    Movie movie = db.Movies.Find(id);
+        //    if (movie == null)
+        //    {
+                
+        //    }
+           
+        
     }
+}
