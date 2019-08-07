@@ -13,8 +13,13 @@ namespace MovieLibrary.Controllers
     public class MovieController : ApiController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
-            
+
             // GET api/values
+            ApplicationDbContext context;
+            public MovieController()
+            {
+                context = new ApplicationDbContext();
+            }
             public IEnumerable<string> Get()
             {
                 // Retrieve all movies from db logic
