@@ -43,19 +43,15 @@ namespace MovieLibrary.Controllers
         }
 
         // PUT api/values/5
-        public void Put(int id, [FromBody]string value)
+        public string Put(int id, [FromBody]Movie movie)
         {
             // Update movie in db logic
-            var MoviesInDB = _db.Movies.Single(m => m.Id == MovieInDB.Id);
-            MoviesInDB.MovieId = MoviesInDB;
-            MoviesInDB.Title = MoviesInDB;
-            MoviesInDB.Genre = MoviesInDB;
-            MoviesInDB.DirectorId = db.Movies.ToList();
-            MoviesInDB.Id = db.Movies.ToList();
+            var MoviesInDB = db.Movies.Single(m => m.Id == id);
+            MoviesInDB.MovieId = MoviesInDB.MovieId;
+            MoviesInDB.Title = MoviesInDB.Title;
+            MoviesInDB.Genre = MoviesInDB.Genre;
             db.SaveChanges();
-            return MoviesInDB("Index", "Players");
-
-
+            return "Movie";
         }
 
         //DELETE api/values/5
