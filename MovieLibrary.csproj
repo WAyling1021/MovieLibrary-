@@ -229,6 +229,10 @@
     <Compile Include="Migrations\201908071937420_Seed.Designer.cs">
       <DependentUpon>201908071937420_Seed.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201908091240047_updating model class .cs" />
+    <Compile Include="Migrations\201908091240047_updating model class .Designer.cs">
+      <DependentUpon>201908091240047_updating model class .cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -339,6 +343,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201908071937420_Seed.resx">
       <DependentUpon>201908071937420_Seed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908091240047_updating model class .resx">
+      <DependentUpon>201908091240047_updating model class .cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

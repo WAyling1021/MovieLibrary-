@@ -48,7 +48,7 @@ namespace MovieLibrary.Controllers
         {
             // Update movie in db logic
             var MoviesInDB = db.Movies.Single(m => m.Id == id);
-            MoviesInDB.MovieId = MoviesInDB.MovieId;
+            MoviesInDB.Id = MoviesInDB.Id;
             MoviesInDB.Title = MoviesInDB.Title;
             MoviesInDB.Genre = MoviesInDB.Genre;
             db.SaveChanges();
