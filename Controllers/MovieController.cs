@@ -10,10 +10,11 @@ using System.Web.Http;
 
 namespace MovieLibrary.Controllers
 {
+    [Route("api/Movie")]
     public class MovieController : ApiController
     {
         private ApplicationDbContext db;
-
+        // bootswatch
         // GET api/values
         public MovieController()
         {
@@ -25,13 +26,13 @@ namespace MovieLibrary.Controllers
 
             return db.Movies.ToList();
         }
-
+        [Route("~/api/Get")]
         // GET api/values/5
         public string Get(int id)
         {
             // Retrieve movie by id from db logic
             Movie moviesToUpdate = db.Movies.Where(s => s.Id == id).Single();
-            return "Movie";
+            return moviesToUpdate.ToString();
         }
         // POST api/values
         public void Post([FromBody]Movie value)
